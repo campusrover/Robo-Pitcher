@@ -1,24 +1,52 @@
 # Robo-Pitcher
-  A Robot which throws a ball to a specified distance
+A Robot that throws a ball to a specified distance
 
-*To run this program use the following steps:
+Example robots and code for interfacing Gazebo with ROS
 
-  roslaunch rrbot_gazebo rrbot_world.launch
-  
-  roslaunch rrbot_control rrbot_control.launch 
-  
-  rosrun rrbot_control pitcher_stable.py 
-  
-  
-*Then simply place a ball into the carriage, enter the desired distance you want to throw the ball, and hit enter.
-The ball must be resized to comfortably fit the receptacle. We recommend running the command:
+## Quick Start
 
-  rosservice call /gazebo/set_model_state '{model_state: { model_name: unit_sphere, 
-  pose: { position: { x: 1, y: 0.5 ,z: 4 }, orientation: {x: 0, y: 0.0, z: 0, w: 0.0 }
-  }, twist: { linear: {x: 0.0 , y: 0 ,z: 0 } , angular: { x: 0.0 , y: 0 , z: 0.0 } } , 
-  reference_frame: world } }'
-This will automatically place the ball in the receptacle (so long as you have spawned in a unit_sphere, the default
-sphere shape in gazebo).
-The net model can simply be dragged, or reset using the same command given for the ball, but replacing unit_sphere 
-with net under model_name, and changing the x y and z data under position. Note that the net is offset from the origin
-by -5 meters, so your inputs should be translated accordingly.
+Gazebo:
+
+    roslaunch rrbot_gazebo rrbot_world.launch
+
+ROS Control:
+
+    roslaunch rrbot_control rrbot_control.launch 
+    
+Control Algorithm:
+
+    rosrun rrbot_control pitcher_stable.py 
+
+Example of Moving Joints:
+
+    rostopic pub /rrbot/joint2_position_controller/command std_msgs/Float64 "data: -0.9"
+
+## Make a throwing ball:
+    
+   Click the ball icon in tool bar in Gazebo to create a sphere
+   
+   Click the scalling tool in Gazebo in tool bar
+   
+   Size it down small enough such that it fits inside the box cartriage
+   
+## Loading ball:
+
+   Open a different terminal tab, and enter the following command
+
+    rosservice call /gazebo/set_model_state '{model_state: { model_name: unit_sphere, 
+    pose: { position: { x: 1, y: 0.5 ,z: 4 }, orientation: {x: 0, y: 0.0, z: 0, w: 0.0 }
+    }, twist: { linear: {x: 0.0 , y: 0 ,z: 0 } , angular: { x: 0.0 , y: 0 , z: 0.0 } } , 
+    reference_frame: world } }'
+    
+## Throwing ball:
+
+
+## Changing Net distance
+   Open a different terminal tab, and enter the following command. (0 is default of -5 unit away from net)
+   
+    rosservice call /gazebo/set_model_state '{model_state: { model_name: net, 
+    pose: { position: { x: 0, y: 0 ,z:0 }, orientation: {x: 0, y: 0.0, z: 0, w: 0.0 }
+    }, twist: { linear: {x: 0.0 , y: 0 ,z: 0 } , angular: { x: 0.0 , y: 0 , z: 0.0 } } , 
+    reference_frame: world } }'
+
+   Note that the net is offset from the origin by -5 meters, so your inputs should be translated accordingly.
