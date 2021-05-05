@@ -50,3 +50,6 @@ Example of Moving Joints:
     reference_frame: world } }'
 
    Note that the net is offset from the origin by -5 meters, so your inputs should be translated accordingly.
+   
+## Youtube Updates 05/05/2021
+    https://www.youtube.com/watch?v=gAmV_dHKpeg
