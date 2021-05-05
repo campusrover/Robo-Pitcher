@@ -1,12 +1,18 @@
 # Robo-Pitcher
-A Robot which throws a ball to a specified distance
+  A Robot which throws a ball to a specified distance
 
-To run this program use the following steps:
+*To run this program use the following steps:
+
   roslaunch rrbot_gazebo rrbot_world.launch
+  
   roslaunch rrbot_control rrbot_control.launch 
+  
   rosrun rrbot_control pitcher_stable.py 
-Then simply place a ball into the carriage, enter the desired distance you want to throw the ball, and hit enter.
+  
+  
+*Then simply place a ball into the carriage, enter the desired distance you want to throw the ball, and hit enter.
 The ball must be resized to comfortably fit the receptacle. We recommend running the command:
+
   rosservice call /gazebo/set_model_state '{model_state: { model_name: unit_sphere, 
   pose: { position: { x: 1, y: 0.5 ,z: 4 }, orientation: {x: 0, y: 0.0, z: 0, w: 0.0 }
   }, twist: { linear: {x: 0.0 , y: 0 ,z: 0 } , angular: { x: 0.0 , y: 0 , z: 0.0 } } , 
