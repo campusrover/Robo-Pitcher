@@ -45,7 +45,7 @@ Example of Moving Joints:
    Open a different terminal tab, and enter the following command. (0 is default of -5 unit away from net)
    
     rosservice call /gazebo/set_model_state '{model_state: { model_name: net, 
-    pose: { position: { x: 0, y: 0 ,z:0 }, orientation: {x: 0, y: 0.0, z: 0, w: 0.0 }
+    pose: { position: { x: 0, y: 0 ,z: 0 }, orientation: {x: 0, y: 0.0, z: 0, w: 0.0 }
     }, twist: { linear: {x: 0.0 , y: 0 ,z: 0 } , angular: { x: 0.0 , y: 0 , z: 0.0 } } , 
     reference_frame: world } }'
 
