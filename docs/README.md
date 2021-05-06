@@ -2,6 +2,7 @@
 
 By Frank Hu & Cole Peterson
 
+![Gazebo Simulation](imgs/big_pic.PNG)
 ### Introduction
 
 - Objective:
@@ -13,58 +14,52 @@ By Frank Hu & Cole Peterson
 
 ### What was Created/Implemented:
 
-#### ROS node Architecture:
+### Simulation Model: 
 
-Each of the two joints in the robot arm published data on their current angle and whatever commands they were trying to follow. The angle reports were given in radians.
-
-#### Simulation Model: 
-
-##### Arm:
+#### Arm:
 
 Our Simulation Model was modeled off [rrbot](https://github.com/ros-simulation/gazebo_ros_demos), a basic arm made from three rectangular poles which served as arm segments, and two joints connecting these segments.
-
+![Catapult](imgs/Catapult.PNG)
 - Catapult Model:
   		We then added an open box to the end of the final arm segment which was used to hold the ball while the arm was swinging. 
 
-##### Basket Model:
-
+#### Basket Model:
+![Basket](imgs/basket.PNG)
 - Objective:
   - To demonstrate that our throwing is controlled, we also designed a basketball-like net as a target hop
 
 - Implementation:
   	We used rrbot's xacro file as a base, used similar method to adding the catapult, and built a basket hoop
 
-#### Control Algorithm:
+### Control Algorithm:
 
-##### 	Control Problem: 
+#### 	Control Problem: 
 
 ​	The arm joints are revolute, effort, positional joints that have 1 degree of freedom and take in a float angle in radius as control input. When a joint receives an angle, the joint uses a PID controller to reach the received angle, which results in over-swing and redundant compensation. Such a condition is not ideal for throwing. Having an arm idling then suddenly accelerates to 50 rad per second is terrible for controlled throwing. Surely, it throws, but no-one knows where it would go.
 
-##### 	Failed Solution:
+#### 	Failed Solution:
 
- Due to the lack of velocity control over the arm, we attempted to gather data on the robot’s current rotational speed, and use that to give new movement commands until the correct speed was obtained. However, the joint position controllers did not by default publish any information on current velocity.
+ 	Due to the lack of velocity control over the arm, we attempted to gather data on the robot’s current rotational speed, and use that to give new movement commands until the correct speed was obtained. However, the joint position controllers did not by default publish any information on current velocity.
 
-##### 	Final Solution:
+#### 	Final Solution:
 
 ​	 Because of this, we changed the joint type to be Velocity controllers. This is to say that we changed the programming of our joint controller to take in a velocity command in radians per second, and use the pid algorithm to reach this speed regardless of angle. Then it was a simple task to publish a desired speed and track the current angle (which was being published by default). With this vital data and control over velocity we were ready to create an algorithm for throwing a ball to an accurate distance, as was our original plan.
 
-##### Math:
+### Math:
 
-#####   Objective: 
+####   Objective: 
 
 - Given a desired input distance, the algorithm figures out the velocity and throwing angle, then executes.
 
-#####   Initial Goal:
+####   Initial Goal:
 
 * Default throwing angle at 45 degrees, and base our velocity calculation off this assumption
 
-##### Reason behind Initial goal:
+#### Reason behind Initial goal:
 
-* 45 degrees is a nice assumption as it protect the arm from over throwing. According to the calculations of physicists, the best angle to throw an object in order to maximize distance is 45 degrees (an explanation of why can be found 
+* 45 degrees is a nice assumption as it protect the arm from over throwing. According to the calculations of physicists, the best angle to throw an object in order to maximize distance is 45 degrees (an explanation of why can be found [here](https://www.scientificamerican.com/article/football-projectile-motion/#:~:text=The%20sine%20function%20reaches%20its,an%20angle%20of%2045%20degrees)
 
-<https://www.scientificamerican.com/article/football-projectile-motion/#:~:text=The%20sine%20function%20reaches%20its,an%20angle%20of%2045%20degrees>
-
-##### Initial Implementation:
+#### Initial Implementation:
 
 ​	With this initial goal in mind, we searched online for the projectile motion equation which relates distance moved to angle and speed of the projectile. This is known as the Range Equation, and takes the following form:
 
