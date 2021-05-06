@@ -56,11 +56,7 @@ Our Simulation Model was modeled off [rrbot](https://github.com/ros-simulation/g
 
 #### Reason behind Initial goal:
 
-* 45 degrees is a nice assumption as it protect the arm from over throwing. According to the calculations of physicists, the best angle to throw an object in order to maximize distance is 45 degrees (an explanation of why can be found 
-
-  [here](https://www.scientificamerican.com/article/football-projectile-motion/#:~:text=The%20sine%20function%20reaches%20its,an%20angle%20of%2045%20degrees)
-
-  : 
+* 45 degrees is a nice assumption as it protect the arm from over throwing. According to the calculations of physicists, the best angle to throw an object in order to maximize distance is 45 degrees (an explanation of why can be found [here](https://www.scientificamerican.com/article/football-projectile-motion/#:~:text=The%20sine%20function%20reaches%20its,an%20angle%20of%2045%20degrees)
 
 #### Initial Implementation:
 
