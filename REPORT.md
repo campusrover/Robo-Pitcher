@@ -21,11 +21,7 @@ Each of the two joints in the robot arm published data on their current angle an
 
 ##### Arm:
 
-Our Simulation Model was modeled off 
-
-[rrbot]: https://github.com/ros-simulation/gazebo_ros_demos
-
-, a basic arm made from three rectangular poles which served as arm segments, and two joints connecting these segments.
+Our Simulation Model was modeled off rrbot, a basic arm made from three rectangular poles which served as arm segments, and two joints connecting these segments.
 
 - Catapult Model:
   		We then added an open box to the end of the final arm segment which was used to hold the ball while the arm was swinging. 
@@ -66,9 +62,7 @@ Our Simulation Model was modeled off
 
 * 45 degrees is a nice assumption as it protect the arm from over throwing. According to the calculations of physicists, the best angle to throw an object in order to maximize distance is 45 degrees (an explanation of why can be found 
 
-  [here]: https://www.scientificamerican.com/article/football-projectile-motion/#:~:text=The%20sine%20function%20reaches%20its,an%20angle%20of%2045%20degrees.
-
-  : 
+<https://www.scientificamerican.com/article/football-projectile-motion/#:~:text=The%20sine%20function%20reaches%20its,an%20angle%20of%2045%20degrees>
 
 ##### Initial Implementation:
 
