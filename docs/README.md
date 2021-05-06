@@ -1,4 +1,4 @@
-# Robo-Pitcher
+# [Robo-Pitcher](https://github.com/campusrover/Robo-Pitcher)
 
 By Frank Hu & Cole Peterson
 
