@@ -72,3 +72,12 @@ In this equation, In this equation, R is the range (or total distance) of the pr
 
 ​	With this information, we could publish commands to the robot joints to reach the appropriate launch velocity. It was then necessary to program it to stop immediately upon reaching 45 degrees so that the ball would continue uninhibited. Then, it was programmed to move back down until reaching what we referred to as a ‘loading’ position where a new ball could be placed, and new user input gathered. We chose approximately 160 degrees, since it was a convenient angle for placing the ball, and allowed enough time for the arm to reach velocity before getting to 45 degrees, however a large range of other options would be equally viable. 
 
+## Labnote Contribution:
+
+Frank:
+
+* [Spawn Object to Gazebo via Terminal ROS Service Call](https://github.com/campusrover/labnotebook/blob/master/faq/spawn_model_terminal.md)
+
+* [Teleport Model within Gazebo Simulation](https://github.com/campusrover/labnotebook/blob/master/faq/model_teleportation.md)
+
+
