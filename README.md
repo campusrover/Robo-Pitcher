@@ -1,4 +1,6 @@
 # Robo-Pitcher
+by Frank Hu & Cole Peterson
+See Full Project Report [Here](https://campusrover.github.io/Robo-Pitcher/)
 A Robot that throws a ball to a specified distance
 
 Example robots and code for interfacing Gazebo with ROS
