@@ -2,6 +2,7 @@
 
 By Frank Hu & Cole Peterson
 
+![Gazebo Simulation](/imgs/big_pic.PNG)
 ### Introduction
 
 - Objective:
@@ -18,12 +19,12 @@ By Frank Hu & Cole Peterson
 #### Arm:
 
 Our Simulation Model was modeled off [rrbot](https://github.com/ros-simulation/gazebo_ros_demos), a basic arm made from three rectangular poles which served as arm segments, and two joints connecting these segments.
-
+![Catapult](/imgs/Catapult.PNG)
 - Catapult Model:
   		We then added an open box to the end of the final arm segment which was used to hold the ball while the arm was swinging. 
 
 #### Basket Model:
-
+![Basket](/imgs/basket.PNG)
 - Objective:
   - To demonstrate that our throwing is controlled, we also designed a basketball-like net as a target hop
 
