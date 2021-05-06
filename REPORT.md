@@ -46,7 +46,7 @@ Our Simulation Model was modeled off
 
 ##### 	Failed Solution:
 
- 	Due to the lack of velocity control over the arm, we attempted to gather data on the robot’s current rotational speed, and use that to give new movement commands until the correct speed was obtained. However, the joint position controllers did not by default publish any information on current velocity.
+ Due to the lack of velocity control over the arm, we attempted to gather data on the robot’s current rotational speed, and use that to give new movement commands until the correct speed was obtained. However, the joint position controllers did not by default publish any information on current velocity.
 
 ##### 	Final Solution:
 
