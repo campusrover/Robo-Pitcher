@@ -80,4 +80,7 @@ Frank:
 
 * [Teleport Model within Gazebo Simulation](https://github.com/campusrover/labnotebook/blob/master/faq/model_teleportation.md)
 
+Cole:
+* [Joint Controllers](https://campus-rover.gitbook.io/lab-notebook/ros-tips/joint-controllers)
+
 
